@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "nutri_in_price",
+    "slug": "nutri_in_price",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
