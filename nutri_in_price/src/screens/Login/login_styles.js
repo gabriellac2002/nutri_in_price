@@ -39,7 +39,7 @@ export const BtnGoogle = styled.TouchableOpacity`
   background-color: #E44133;
   border-radius: 30px;
   width: 90%;
-  padding: 20px;
+  padding: 10px;
   margin-top: 10px;
   align-items: center;
 `
