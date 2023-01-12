@@ -36,7 +36,7 @@ export const Cadastro = () => {
                 />
 
                 <CustomButton>
-                    <CustomButtonText>Cadastre</CustomButtonText>
+                    <CustomButtonText>Cadastrar</CustomButtonText>
                 </CustomButton>
             </InputArea>
 
