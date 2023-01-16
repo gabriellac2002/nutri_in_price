@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useContext } from 'react';
+import { useNavigation } from '@react-navigation/native';
 import { 
     Container,
     InputArea ,
@@ -14,6 +15,19 @@ import PersonIcon from "../../assets/person.svg"
 import LogoEmbrapa from '../../assets/Logomarca-Embrapa.svg'
 
 export const Cadastro = () => {
+
+    const navigation = useNavigation();
+
+    const [nameField, setNameField] = useState('');
+    const [emailField, setEmailField] = useState('');
+    const [passwordField, setPasswordField] = useState('');
+
+    const handleButtonClick = () => {
+        navigation.reset({
+            routes: [{name: 'QuestionOne'}]
+        });
+    }
+
     return(
         <Container>
 
@@ -25,17 +39,23 @@ export const Cadastro = () => {
                 <SingInput
                     IconSvg={PersonIcon}
                     placeholder="Nome"
+                    value={nameField}
+                    onChangeText={t=>setNameField(t)}
                 />
                 <SingInput 
                     IconSvg={EmailIcon}
                     placeholder="Email"
+                    value={emailField}
+                    onChangeText={t=>setEmailField(t)}
                 />
                 <SingInput
                     IconSvg={LockIcon}
                     placeholder="Senha"
+                    value={passwordField}
+                    onChangeText={t=>setPasswordField(t)}
                 />
 
-                <CustomButton>
+                <CustomButton onPress={handleButtonClick}>
                     <CustomButtonText>Cadastrar</CustomButtonText>
                 </CustomButton>
             </InputArea>
