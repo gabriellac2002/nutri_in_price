@@ -12,8 +12,11 @@ import {
     SingMessageButtonTextBold
 } from './styles';
 
+//componentes
 import SingInput from "../../components/SingInput";
+import Logo from '../../components/Logo/index';
 
+//assets
 import EmailIcon from "../../assets/email.svg";
 import LockIcon from "../../assets/lock.svg";
 import LogoEmbrapa from '../../assets/Logomarca-Embrapa.svg'
@@ -31,14 +34,18 @@ export const Login = () => {
         });
     }
 
+    const logar = () => {
+        navigation.reset({
+            routes: [{name: 'Home'}]
+        });
+    }
+
 
 
     return(
         <Container>
 
-            {/* <LogoEmbrapa 
-                width="32.8%" 
-            /> */}
+            <Logo/>
 
             <InputArea>
                 <SingInput 
@@ -56,7 +63,7 @@ export const Login = () => {
 
                 />
 
-                <CustomButton>
+                <CustomButton onPress={logar}>
                     <CustomButtonText>LOGIN</CustomButtonText>
                 </CustomButton>
             </InputArea>

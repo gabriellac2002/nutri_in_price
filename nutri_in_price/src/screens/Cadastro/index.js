@@ -8,6 +8,7 @@ import {
 } from './styles';
 
 import SingInput from "../../components/SingInput";
+import Logo from '../../components/Logo/index';
 
 import EmailIcon from "../../assets/email.svg";
 import LockIcon from "../../assets/lock.svg";
@@ -31,9 +32,7 @@ export const Cadastro = () => {
     return(
         <Container>
 
-            {/* <LogoEmbrapa 
-                width="32.8%" 
-            /> */}
+            <Logo/>
 
             <InputArea>
                 <SingInput
