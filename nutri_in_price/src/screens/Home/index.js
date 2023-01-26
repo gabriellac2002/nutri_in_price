@@ -44,6 +44,11 @@ export const Home = () => {
         });
     }
 
+    const irParaHankingProteina = () => {
+        navigation.reset({
+            routes: [{name: 'Proteina'}]
+        });
+    }
 
     return(
         <Container>
@@ -81,7 +86,7 @@ export const Home = () => {
                         />
                         <MessageRankingButton>Custo Benefício Nutricional</MessageRankingButton>
                     </ButtonCustoBeneficio>
-                    <ButtonDensidade>
+                    <ButtonDensidade onPress={irParaHankingProteina}>
                         <Image
                             source={garfo}
                             style={styles.tinyLogo} 

@@ -5,13 +5,13 @@ import {StyleSheet} from 'react-native';
 
 import {
     Container,
-    CategoryTitle
+    ProductTitle
     
 } from './styles';
 
-import egg from "../../assets/egg.png";
+import ovos from "../../assets/bandeja_ovos.jpg";
 
-export const CategoriaRanking = () => {
+export const ModalProduct = () => {
 
     const styled = StyleSheet.create({
         tinyLogo: {
@@ -21,21 +21,17 @@ export const CategoriaRanking = () => {
         
     });
 
-    const irParaHankingProteina = () => {
-        navigation.reset({
-            routes: [{name: 'Proteina'}]
-        });
-    }
+   
 
     return(
-        <Container onPress={irParaHankingProteina}>
-            <Image
-                source={egg}
+        <Container>
+            {/* <Image
+                source={ovos}
                 style={styled.tinyLogo} 
-            />
-            <CategoryTitle>Proteina</CategoryTitle>
+            /> */}
+            {/* <ProductTitle>Ovos</ProductTitle> */}
         </Container>
     );
 }
 
-export default CategoriaRanking;
+export default ModalProduct;
