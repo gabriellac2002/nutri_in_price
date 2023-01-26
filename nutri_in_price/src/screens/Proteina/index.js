@@ -5,31 +5,35 @@ import {StyleSheet} from 'react-native';
 
 import {
     Container,
-    CategoryTitle
+    Scroller,
     
 } from './styles';
 
-import egg from "../../assets/egg.png";
 
-export const CategoriaRanking = () => {
+export const Proteina = () => {
 
-    const styled = StyleSheet.create({
+    const styles = StyleSheet.create({
         tinyLogo: {
           width: 40,
-          height: 30,
+          height: 40,
         },
         
     });
 
+    const irParaHankingProteina = () => {
+        navigation.reset({
+            routes: [{name: 'Ranking_custo_beneficio'}]
+        });
+    }
+
     return(
         <Container>
-            <Image
-                source={egg}
-                style={styled.tinyLogo} 
-            />
-            <CategoryTitle>Proteina</CategoryTitle>
+            <Scroller>
+               
+                
+            </Scroller>
         </Container>
     );
 }
 
-export default CategoriaRanking;
+export default Proteina;
