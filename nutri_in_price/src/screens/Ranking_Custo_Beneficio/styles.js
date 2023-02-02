@@ -18,7 +18,6 @@ export const HeaderArea = styled.View`
     flex: 1;
     flex-direction:row;
     padding-top: 15%;
-    aling-itens:center;
     width: 100%;
     margin-botton:10%;
     aling-itens:center;
@@ -30,5 +29,9 @@ export const HeaderTitle = styled.Text`
     font-size: 20px;
     font-weight: bold;
     color: #FFFFFF;
+    
+`;
+
+export const CategoryArea = styled.View`
     
 `;

@@ -1,7 +1,5 @@
 import React, { useState, useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Image } from 'react-native';
-import {StyleSheet} from 'react-native';
 
 import {
     Container,
@@ -9,17 +7,9 @@ import {
     
 } from './styles';
 
-import egg from "../../assets/egg.png";
 
-export const CategoriaRanking = () => {
 
-    const styled = StyleSheet.create({
-        tinyLogo: {
-          width: 40,
-          height: 30,
-        },
-        
-    });
+export const CategoriaRanking = ( props ) => {
 
     const irParaHankingProteina = () => {
         navigation.reset({
@@ -29,11 +19,7 @@ export const CategoriaRanking = () => {
 
     return(
         <Container onPress={irParaHankingProteina}>
-            <Image
-                source={egg}
-                style={styled.tinyLogo} 
-            />
-            <CategoryTitle>Proteina</CategoryTitle>
+            <CategoryTitle>{props.nomeCategoria}</CategoryTitle>
         </Container>
     );
 }

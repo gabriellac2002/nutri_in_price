@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components/native";
 
-export const Container = styled.SafeAreaView`
-    flex: 1;
+export const Container = styled.View`
+    background-color: #d3d3d3;
     flex-direction:row;
-    background-color: #BEB6B6;
     width: 95%;
     padding: 40px;
     aling-itens:center;
@@ -16,6 +15,24 @@ export const ProductTitle = styled.Text`
     width: 70%;
     font-size: 20px;
     font-weight: bold;
-    color: #004521;
+    color: #FFFFFF;
     margin-right: 30%;
+    margin-left: 5%;
+    
 `;
+
+export const ProductPrice = styled.Text`
+    width: 70%;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-right: 30%;
+    margin-left: 5%;
+    
+`;
+
+export const AreaProduct = styled.View`
+    
+`;
+
+

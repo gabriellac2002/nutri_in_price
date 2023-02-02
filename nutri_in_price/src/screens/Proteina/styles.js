@@ -20,7 +20,7 @@ export const PageBody = styled.View`
     width: 100%;
     height: 600px;
     margin-top:40%;
-    flex-direction: row;
+  
 `;
 
 export const TextHeather = styled.Text`
@@ -29,22 +29,11 @@ export const TextHeather = styled.Text`
     font-weight: bold;
     color: #004521;
     margin-top: 5%;
-    margin-left: 5px;
+    margin-left: 20px;
 `;
 
-export const ImageArea = styled.View`
-    background-color: #BEB6B6;
-    border-radius: 10px;
-    width: 30%;
-    height: 100px;
-    flex-direction: row;
-    aling-itens:center;
-    justify-content:center;
-    margin-left: 15px;
-    margin-top:-10%;
-    padding: 20px;
-`;
 
 export const RankingArea = styled.View`
     flex-direction: column;
+    margin-left: 15px;
 `;
