@@ -10,11 +10,14 @@ import {
     Scroller,
     HeaderArea,
     HeaderTitle,
-    CategoryArea
+    CategoryArea, 
+    ContainerTypeRanking,
+    CategoryTitle,
+    ContainerBack
 } from './styles';
 
 //componentes
-import CategoriaRanking from '../../components/CategoriaRanking';
+
 
 //assets
 import money from "../../assets/money.png";
@@ -49,11 +52,14 @@ export const RankingCustoBeneficio = () => {
             <Scroller>
                 
                 <HeaderArea>
-                    <Image
-                        source={back}
-                        style={styles.tinyLogo}
-                        onPress={voltarHome} 
-                    />
+                    <ContainerBack onPress={voltarHome}>
+                        <Image
+                            source={back}
+                            style={styles.tinyLogo}
+                            onPress={voltarHome} 
+                        />
+                    </ContainerBack>
+                    
                     <HeaderTitle> Ranking de Custo Benefício Nutricional</HeaderTitle>
                         <Image
                             source={money}
@@ -61,13 +67,13 @@ export const RankingCustoBeneficio = () => {
                         />
                 </HeaderArea>
                 
-                <CategoryArea onPress={irParaHankingProteina}>
-                    <CategoriaRanking  nomeCategoria = {"Proteina"}/>
+                <CategoryArea>
+                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                        <CategoryTitle>Proteinas</CategoryTitle>
+                    </ContainerTypeRanking>
                 </CategoryArea>
                
-                <CategoriaRanking nomeCategoria = {"Carboidratos"}/>
-                <CategoriaRanking nomeCategoria = {"Lactose"}/>
-                <CategoriaRanking nomeCategoria = {"Proteina"}/>
+                
                 
             </Scroller>
         </Container>

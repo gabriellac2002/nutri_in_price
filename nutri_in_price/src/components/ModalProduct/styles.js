@@ -9,6 +9,7 @@ export const Container = styled.View`
     aling-itens:center;
     border-radius: 30px;
     margin-top:10%;
+    margin-bottom: 3%;
 `;
 
 export const ProductTitle = styled.Text`

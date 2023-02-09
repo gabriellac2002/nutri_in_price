@@ -14,12 +14,12 @@ export const Scroller = styled.ScrollView`
 
 `;
 
-export const PageBody = styled.View`
+export const PageBody = styled.ScrollView`
     background-color: #FFFFFF;
     border-radius: 20px;
     width: 100%;
-    height: 600px;
-    margin-top:40%;
+    height: 100%;
+    margin-top:20%;
   
 `;
 
@@ -33,7 +33,7 @@ export const TextHeather = styled.Text`
 `;
 
 
-export const RankingArea = styled.View`
+export const RankingArea = styled.ScrollView`
     flex-direction: column;
     margin-left: 15px;
 `;

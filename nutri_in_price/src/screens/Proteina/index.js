@@ -1,6 +1,6 @@
 import React, { useState, useContext,useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Image } from 'react-native';
+import { Image, ScrollView } from 'react-native';
 import {StyleSheet} from 'react-native';
 
 import {
@@ -45,27 +45,36 @@ export const Proteina = () => {
 
     return(
         <Container>
-            <Scroller>
-                <Image
-                    source={back}
-                    style={styles.tinyLogo}
-                    mb={10}
-                    onPress={irParaHankingProteina} 
-                />
+            <ScrollView>
+                <Scroller>
+                    <Image
+                        source={back}
+                        style={styles.tinyLogo}
+                        mb={10}
+                        onPress={irParaHankingProteina} 
+                    />
 
-               <PageBody>   
-                    <TextHeather>Ranking de Proteinas</TextHeather>
-                    <RankingArea>
-                        {alimentos.map((alimento) => <ModalProduct 
-                            key={alimento.toString()}
-                            value={alimento}
-                            produto = {alimento.produto}
-                            preco_medio_nutriente = {alimento.preco_medio_nutriente}
-                        />)}
-                        
-                    </RankingArea>
-               </PageBody> 
-            </Scroller>
+                    <ScrollView>
+                        <PageBody>  
+                            <ScrollView>
+                                <TextHeather>Ranking de Proteinas</TextHeather>
+                                <RankingArea>
+                                    
+                                    {alimentos.map((alimento) => <ModalProduct 
+                                        key={alimento.codigo}
+                                        value={alimento.codigo}
+                                        produto = {alimento.produto}
+                                        preco_medio_nutriente = {alimento.preco_medio_nutriente}
+                                    />)}
+
+                                    
+                                    
+                                </RankingArea>
+                            </ScrollView> 
+                        </PageBody> 
+                    </ScrollView>
+                </Scroller>
+            </ScrollView>
         </Container>
     );
 }
