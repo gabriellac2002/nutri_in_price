@@ -7,7 +7,7 @@ import {
     Container,
     ProductTitle,
     AreaProduct,
-    ProductPrice
+    ProductPrice,
     
 } from './styles';
 
@@ -44,7 +44,7 @@ export const ModalProduct = (props) => {
             /> */}
             <AreaProduct>
                 <ProductTitle>{props.produto}</ProductTitle>
-                <ProductPrice>R$ {props.preco_medio_nutriente}</ProductPrice>
+                <ProductPrice>A cada 100g: ${props.preco_medio_nutriente}</ProductPrice>
             </AreaProduct>
             
         </Container>

@@ -14,7 +14,7 @@ export const Container = styled.View`
 
 export const ProductTitle = styled.Text`
     width: 70%;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
     color: #FFFFFF;
     margin-right: 30%;
@@ -24,13 +24,14 @@ export const ProductTitle = styled.Text`
 
 export const ProductPrice = styled.Text`
     width: 70%;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: bold;
     color: #FFFFFF;
-    margin-right: 30%;
     margin-left: 5%;
     
 `;
+
+
 
 export const AreaProduct = styled.View`
     
