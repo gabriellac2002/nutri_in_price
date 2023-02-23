@@ -25,7 +25,7 @@ export const Proteina = () => {
     const [alimentos,setAlimentos] = useState([]);
 
     useEffect(  () => {
-        fetch('http://192.168.0.104/alimentos/1/33').then((res) => res.json().then(data => setAlimentos(data)))
+        fetch('http://192.168.0.104:8000/alimentos/1/33').then((res) => res.json().then(data => setAlimentos(data)))
     },[alimentos]);
 
     const styles = StyleSheet.create({

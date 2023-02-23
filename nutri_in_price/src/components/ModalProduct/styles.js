@@ -12,6 +12,12 @@ export const Container = styled.View`
     margin-bottom: 3%;
 `;
 
+export const ConatinerImage = styled.View`
+    margin-right: 3%;
+    aling-itens:center;
+    justify-content: center;
+`;
+
 export const ProductTitle = styled.Text`
     width: 70%;
     font-size: 17px;

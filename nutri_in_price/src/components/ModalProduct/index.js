@@ -8,22 +8,22 @@ import {
     ProductTitle,
     AreaProduct,
     ProductPrice,
+    ConatinerImage
     
 } from './styles';
 
 import ovos from "../../assets/egg.png";
+import carne_moida from "../../assets/carne_moida.jpg";
 
 export const ModalProduct = (props) => {
 
 
     const styled = StyleSheet.create({
         tinyLogo: {
-          width: 40,
-          height: 40,
-
-        },
-
-       
+          width: 60,
+          height: 50,
+          borderRadius: 5,
+        }, 
         
     });
 
@@ -38,10 +38,12 @@ export const ModalProduct = (props) => {
 
     return(
         <Container>
-            {/* <Image
-                source={ovos}
-                style={styled.tinyLogo} 
-            /> */}
+            <ConatinerImage>
+                <Image
+                    source={{ uri: props.imagem }}
+                    style={styled.tinyLogo} 
+                />
+            </ConatinerImage>
             <AreaProduct>
                 <ProductTitle>{props.produto}</ProductTitle>
                 <ProductPrice>A cada 100g: ${props.preco_medio_nutriente}</ProductPrice>
