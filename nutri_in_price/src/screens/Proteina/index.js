@@ -1,5 +1,5 @@
 import React, { useState, useContext,useEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import { Image, ScrollView } from 'react-native';
 import {StyleSheet} from 'react-native';
 
@@ -7,8 +7,11 @@ import {
     Container,
     Scroller,
 
+    AreaBackButton,
+
     PageBody,
     TextHeather,
+    AreaTitle,
 
     RankingArea,
 
@@ -16,6 +19,7 @@ import {
 } from './styles';
 
 import back from "../../assets/voltar.png";
+import info from "../../assets/info_asset.png";
 
 import ModalProduct from '../../components/ModalProduct/index';
 
@@ -37,9 +41,11 @@ export const Proteina = () => {
         
     });
 
-    const irParaHankingProteina = () => {
+    const navigation = useNavigation();
+
+    const backButtom = () => {
         navigation.reset({
-            routes: [{name: 'Proteina'}]
+            routes: [{name: 'Ranking_custo_beneficio'}]
         });
     }
 
@@ -49,17 +55,28 @@ export const Proteina = () => {
         <Container>
             <ScrollView>
                 <Scroller>
-                    <Image
-                        source={back}
-                        style={styles.tinyLogo}
-                        mb={10}
-                        onPress={irParaHankingProteina} 
-                    />
+                    <AreaBackButton onPress={backButtom}>
+                        <Image
+                            source={back}
+                            style={styles.tinyLogo}
+                            mb={10}
+                        />
+                    </AreaBackButton>
 
                     <ScrollView>
                         <PageBody>  
                             <ScrollView>
-                                <TextHeather>Ranking de Proteinas</TextHeather>
+
+                                <AreaTitle>
+                                    <TextHeather>Ranking de Proteinas</TextHeather>
+                                    <Image
+                                        source={info}
+                                        style={styles.tinyLogo}
+                                        
+                                    />
+                                </AreaTitle>
+                                
+
                                 <RankingArea>
                                     
                                     {alimentos.map((alimento) => <ModalProduct 
@@ -67,7 +84,7 @@ export const Proteina = () => {
                                         value={alimento.codigo}
 
                                         lugar_ranking = {++lugar_ranking}
-                                        
+
                                         produto = {alimento.produto}
                                         preco_medio_nutriente = {alimento.preco_medio_nutriente}
                                     />)}

@@ -14,6 +14,10 @@ export const Scroller = styled.ScrollView`
 
 `;
 
+export const AreaBackButton = styled.TouchableOpacity`
+
+`;
+
 export const PageBody = styled.ScrollView`
     background-color: #FFFFFF;
     border-radius: 20px;
@@ -23,13 +27,18 @@ export const PageBody = styled.ScrollView`
   
 `;
 
+export const AreaTitle = styled.View`
+    flex-direction: row;
+    margin-top: 5%;
+    margin-left: 20px;
+`;
+
 export const TextHeather = styled.Text`
     width: 250px;
     font-size: 20px;
     font-weight: bold;
     color: #004521;
-    margin-top: 5%;
-    margin-left: 20px;
+    margin-left: 2%;
 `;
 
 

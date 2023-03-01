@@ -56,7 +56,7 @@ export const RankingCustoBeneficio = () => {
                         <Image
                             source={back}
                             style={styles.tinyLogo}
-                            onPress={voltarHome} 
+                            
                         />
                     </ContainerBack>
                     
