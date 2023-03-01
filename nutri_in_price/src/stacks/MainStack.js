@@ -8,6 +8,7 @@ import QuestionOne from '../screens/Questions/QuestionOne';
 import Home from '../screens/Home/index';
 import { RankingCustoBeneficio } from '../screens/Ranking_Custo_Beneficio/index';
 import Proteina from '../screens/Proteina/index';
+import InfoRanking from '../screens/InfoRanking/index.js';
 
 const Stack = createStackNavigator();   
 
@@ -20,9 +21,9 @@ export default () => (
 
     >
         <Stack.Screen name="Login" component={Login} />
-
         <Stack.Screen name="Home" component={Home} />
 
+        <Stack.Screen name="Info" component={InfoRanking} />
 
         <Stack.Screen name="Ranking_custo_beneficio" component={RankingCustoBeneficio} />
         <Stack.Screen name="Proteina" component={Proteina} />

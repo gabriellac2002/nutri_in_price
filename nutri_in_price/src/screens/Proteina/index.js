@@ -24,9 +24,12 @@ import info from "../../assets/info_asset.png";
 import ModalProduct from '../../components/ModalProduct/index';
 
 
+
 export const Proteina = () => {
 
     const [alimentos,setAlimentos] = useState([]);
+    
+
 
     useEffect(  () => {
         fetch('http://192.168.0.107:8000/alimentos/1/33').then((res) => res.json().then(data => setAlimentos(data)))
@@ -49,6 +52,13 @@ export const Proteina = () => {
         });
     }
 
+    const infoButton = () => {
+        navigation.reset({
+            routes: [{name: 'Info'}]
+        });
+    }
+
+
     let lugar_ranking = 0 ;
 
     return(
@@ -69,11 +79,13 @@ export const Proteina = () => {
 
                                 <AreaTitle>
                                     <TextHeather>Ranking de Proteinas</TextHeather>
-                                    <Image
-                                        source={info}
-                                        style={styles.tinyLogo}
-                                        
-                                    />
+                                    <AreaBackButton onPress={infoButton}>
+                                        <Image
+                                            source={info}
+                                            style={styles.tinyLogo}
+                                            
+                                        />
+                                    </AreaBackButton>
                                 </AreaTitle>
                                 
 
@@ -97,6 +109,7 @@ export const Proteina = () => {
                     </ScrollView>
                 </Scroller>
             </ScrollView>
+
         </Container>
     );
 }
