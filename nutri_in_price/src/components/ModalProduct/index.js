@@ -4,11 +4,10 @@ import { Image } from 'react-native';
 import {StyleSheet,Text} from 'react-native';
 
 import {
-    Container,
-    ProductTitle,
-    AreaProduct,
-    ProductPrice,
-    ConatinerImage
+    ProductItem,
+    ProductInfo,
+    ProductName,
+    ProductPrice
     
 } from './styles';
 
@@ -37,19 +36,17 @@ export const ModalProduct = (props) => {
    
 
     return(
-        <Container>
-            <ConatinerImage>
-                <Image
-                    source={{ uri: props.imagem }}
-                    style={styled.tinyLogo} 
-                />
-            </ConatinerImage>
-            <AreaProduct>
-                <ProductTitle>{props.produto}</ProductTitle>
-                <ProductPrice>A cada 100g: ${props.preco_medio_nutriente}</ProductPrice>
-            </AreaProduct>
-            
-        </Container>
+       <ProductItem key={props.codigo}>
+           <Image
+                source={carne_moida}
+                style={styled.tinyLogo} 
+            />
+
+            <ProductInfo>
+                <ProductName>{props.produto}</ProductName>
+                <ProductPrice>R${props.preco_medio_nutriente}</ProductPrice>
+            </ProductInfo>
+       </ProductItem>
     );
 }
 
