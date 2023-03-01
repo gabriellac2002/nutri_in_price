@@ -22,12 +22,15 @@ export const ProductPrice = styled.Text`
     color: #006F35;
 `;
 
-export const ServiceChooseButton = styled.TouchableOpacity`
-    background-color: #4EADBE;
+export const RankingButton = styled.TouchableOpacity`
+    background-color: #006F35;
     border-radius: 10px;
     padding: 10px 15px;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
 `;
-export const ServiceChooseBtnText = styled.Text`
+export const RankingBtnText = styled.Text`
     font-size: 14px;
     font-weight: bold;
     color: #FFFFFF;

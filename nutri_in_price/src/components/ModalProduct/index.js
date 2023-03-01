@@ -7,7 +7,9 @@ import {
     ProductItem,
     ProductInfo,
     ProductName,
-    ProductPrice
+    ProductPrice,
+    RankingButton,
+    RankingBtnText
     
 } from './styles';
 
@@ -33,10 +35,16 @@ export const ModalProduct = (props) => {
             routes: [{name: 'Proteina'}]
         });
     }
+
+    
    
 
     return(
        <ProductItem key={props.codigo}>
+            <RankingButton>
+                <RankingBtnText>{props.lugar_ranking}</RankingBtnText>
+            </RankingButton>
+
            <Image
                 source={carne_moida}
                 style={styled.tinyLogo} 

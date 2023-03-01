@@ -43,6 +43,8 @@ export const Proteina = () => {
         });
     }
 
+    let lugar_ranking = 0 ;
+
     return(
         <Container>
             <ScrollView>
@@ -63,6 +65,9 @@ export const Proteina = () => {
                                     {alimentos.map((alimento) => <ModalProduct 
                                         key={alimento.codigo}
                                         value={alimento.codigo}
+
+                                        lugar_ranking = {++lugar_ranking}
+                                        
                                         produto = {alimento.produto}
                                         preco_medio_nutriente = {alimento.preco_medio_nutriente}
                                     />)}
