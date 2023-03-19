@@ -69,8 +69,45 @@ export const RankingCustoBeneficio = () => {
                 
                 <CategoryArea>
                     <ContainerTypeRanking onPress={irParaHankingProteina}>
-                        <CategoryTitle>Proteinas</CategoryTitle>
+                        <CategoryTitle>Proteína</CategoryTitle>
                     </ContainerTypeRanking>
+
+                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                        <CategoryTitle>Cálcio</CategoryTitle>
+                    </ContainerTypeRanking>
+
+                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                        <CategoryTitle>Ferro</CategoryTitle>
+                    </ContainerTypeRanking>
+
+                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                        <CategoryTitle>Fibra</CategoryTitle>
+                    </ContainerTypeRanking>
+
+                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                        <CategoryTitle>Vitamina A</CategoryTitle>
+                    </ContainerTypeRanking>
+
+                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                        <CategoryTitle>Vitamina C</CategoryTitle>
+                    </ContainerTypeRanking>
+
+                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                        <CategoryTitle>Vitamina D</CategoryTitle>
+                    </ContainerTypeRanking>
+
+                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                        <CategoryTitle>Vitamina E</CategoryTitle>
+                    </ContainerTypeRanking>
+
+                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                        <CategoryTitle>Açúcar</CategoryTitle>
+                    </ContainerTypeRanking>
+
+                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                        <CategoryTitle>Sódio</CategoryTitle>
+                    </ContainerTypeRanking>
+
                 </CategoryArea>
                
                 

@@ -21,7 +21,7 @@ import {
 import back from "../../assets/voltar.png";
 import info from "../../assets/info_asset.png";
 
-import ModalProduct from '../../components/ModalProduct/index';
+import ModalProduct from '../../../components/ModalProduct/index';
 
 
 
@@ -32,7 +32,7 @@ export const Proteina = () => {
 
 
     useEffect(  () => {
-        fetch('http://192.168.2.102:8000/alimentos/1/33').then((res) => res.json().then(data => setAlimentos(data)))
+        fetch('http://200.131.52.34:3000/alimentos/1/33').then((res) => res.json().then(data => setAlimentos(data)))
     },[alimentos]);
 
     const styles = StyleSheet.create({
@@ -84,7 +84,7 @@ export const Proteina = () => {
                             <ScrollView>
 
                                 <AreaTitle>
-                                    <TextHeather>Ranking de Proteinas</TextHeather>
+                                    <TextHeather>Ranking de Proteínas</TextHeather>
                                     <AreaBackButton onPress={productInfo}>
                                         <Image
                                             source={info}
