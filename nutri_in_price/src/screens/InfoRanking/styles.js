@@ -30,6 +30,7 @@ export const ButtonClose = styled.TouchableOpacity`
 
 export const Text = styled.Text`
     font-size: 16px;
-    color: #006F35;
+    color: #000000;
     font-weight: bold;
+    
 `;

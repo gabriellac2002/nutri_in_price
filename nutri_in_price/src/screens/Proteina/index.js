@@ -32,7 +32,7 @@ export const Proteina = () => {
 
 
     useEffect(  () => {
-        fetch('http://192.168.0.107:8000/alimentos/1/33').then((res) => res.json().then(data => setAlimentos(data)))
+        fetch('http://192.168.2.102:8000/alimentos/1/33').then((res) => res.json().then(data => setAlimentos(data)))
     },[alimentos]);
 
     const styles = StyleSheet.create({
@@ -58,6 +58,12 @@ export const Proteina = () => {
         });
     }
 
+    const productInfo = () => {
+        navigation.reset({
+            routes: [{name: 'Product'}]
+        });
+    }
+
 
     let lugar_ranking = 0 ;
 
@@ -79,7 +85,7 @@ export const Proteina = () => {
 
                                 <AreaTitle>
                                     <TextHeather>Ranking de Proteinas</TextHeather>
-                                    <AreaBackButton onPress={infoButton}>
+                                    <AreaBackButton onPress={productInfo}>
                                         <Image
                                             source={info}
                                             style={styles.tinyLogo}
@@ -99,6 +105,7 @@ export const Proteina = () => {
 
                                         produto = {alimento.produto}
                                         preco_medio_nutriente = {alimento.preco_medio_nutriente}
+                                        
                                     />)}
 
                                     

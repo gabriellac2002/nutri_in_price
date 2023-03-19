@@ -46,3 +46,5 @@ export const RankingArea = styled.ScrollView`
     flex-direction: column;
     margin-left: 15px;
 `;
+
+

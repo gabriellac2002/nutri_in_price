@@ -13,7 +13,7 @@ import {
     
 } from './styles';
 
-import ovos from "../../assets/egg.png";
+
 import carne_moida from "../../assets/carne_moida.jpg";
 
 export const ModalProduct = (props) => {
@@ -30,9 +30,9 @@ export const ModalProduct = (props) => {
 
     const navigation = useNavigation();
 
-    const irParaHankingProteina = () => {
+    const infoProduct = () => {
         navigation.reset({
-            routes: [{name: 'Proteina'}]
+            routes: [{name: 'Product'}]
         });
     }
 
@@ -40,7 +40,7 @@ export const ModalProduct = (props) => {
    
 
     return(
-       <ProductItem key={props.codigo}>
+       <ProductItem onClick={infoProduct} key={props.codigo} >
             <RankingButton>
                 <RankingBtnText>{props.lugar_ranking}</RankingBtnText>
             </RankingButton>

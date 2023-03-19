@@ -38,8 +38,7 @@ export const InfoRanking = () => {
             <TextArea>
                 <ModalArea>
                     <Text>
-                        O preço mostrado ao lado dos produtos é equivalente ao custo-beneficio do nutriente
-                        encontrado a cada 100 gramas.
+                    O preço apresentado para cada produto equivale ao custo-benefício do nutriente para cada 100g do alimento. O custo-benefício considera 30% da Recomendação Diária de um Nutriente, a quantidade do nutriente no alimento e o preço de 100 gramas do produto alimentício. Assim, para consumir 30% da recomendação diária do nutriente , deve-se consumir 100 gramas do alimento  e o custo para isso é o valor exibido. Esse ranking é exibido de forma a apresentar uma lista dos alimentos que possuem um melhor custo-benefício, de modo a permitir ao consumidor escolher um produto que se gaste menos para consumir o nutriente em questão.
                     </Text>
                 </ModalArea>
             </TextArea>
