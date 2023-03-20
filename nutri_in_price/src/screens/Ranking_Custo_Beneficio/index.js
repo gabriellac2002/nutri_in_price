@@ -41,6 +41,60 @@ export const RankingCustoBeneficio = () => {
         });
     }
 
+    const irParaHankingCalcio = () => {
+        navigation.reset({
+            routes: [{name: 'Calcio'}]
+        });
+    }
+
+    const irParaHankingFerro = () => {
+        navigation.reset({
+            routes: [{name: 'Ferro'}]
+        });
+    }
+
+    const irParaHankingFibra = () => {
+        navigation.reset({
+            routes: [{name: 'Fibra'}]
+        });
+    }
+
+    const irParaHankingVitaminaA = () => {
+        navigation.reset({
+            routes: [{name: 'VitaminaA'}]
+        });
+    }
+
+    const irParaHankingVitaminaC = () => {
+        navigation.reset({
+            routes: [{name: 'VitaminaC'}]
+        });
+    }
+
+    const irParaHankingVitaminaD = () => {
+        navigation.reset({
+            routes: [{name: 'VitaminaD'}]
+        });
+    }
+
+    const irParaHankingVitaminaE = () => {
+        navigation.reset({
+            routes: [{name: 'VitaminaE'}]
+        });
+    }
+
+    const irParaHankingAcucar = () => {
+        navigation.reset({
+            routes: [{name: 'Acucar'}]
+        });
+    }
+
+    const irParaHankingSodio = () => {
+        navigation.reset({
+            routes: [{name: 'Sodio'}]
+        });
+    }
+
     const voltarHome = () => {
         navigation.reset({
             routes: [{name: 'Home'}]
@@ -72,39 +126,39 @@ export const RankingCustoBeneficio = () => {
                         <CategoryTitle>Proteína</CategoryTitle>
                     </ContainerTypeRanking>
 
-                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                    <ContainerTypeRanking onPress={irParaHankingCalcio}>
                         <CategoryTitle>Cálcio</CategoryTitle>
                     </ContainerTypeRanking>
 
-                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                    <ContainerTypeRanking onPress={irParaHankingFerro}>
                         <CategoryTitle>Ferro</CategoryTitle>
                     </ContainerTypeRanking>
 
-                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                    <ContainerTypeRanking onPress={irParaHankingFibra}>
                         <CategoryTitle>Fibra</CategoryTitle>
                     </ContainerTypeRanking>
 
-                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                    <ContainerTypeRanking onPress={irParaHankingVitaminaA}>
                         <CategoryTitle>Vitamina A</CategoryTitle>
                     </ContainerTypeRanking>
 
-                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                    <ContainerTypeRanking onPress={irParaHankingVitaminaC}>
                         <CategoryTitle>Vitamina C</CategoryTitle>
                     </ContainerTypeRanking>
 
-                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                    <ContainerTypeRanking onPress={irParaHankingVitaminaD}>
                         <CategoryTitle>Vitamina D</CategoryTitle>
                     </ContainerTypeRanking>
 
-                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                    <ContainerTypeRanking onPress={irParaHankingVitaminaE}>
                         <CategoryTitle>Vitamina E</CategoryTitle>
                     </ContainerTypeRanking>
 
-                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                    <ContainerTypeRanking onPress={irParaHankingAcucar}>
                         <CategoryTitle>Açúcar</CategoryTitle>
                     </ContainerTypeRanking>
 
-                    <ContainerTypeRanking onPress={irParaHankingProteina}>
+                    <ContainerTypeRanking onPress={irParaHankingSodio}>
                         <CategoryTitle>Sódio</CategoryTitle>
                     </ContainerTypeRanking>
 

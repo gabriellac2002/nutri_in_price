@@ -8,11 +8,21 @@ import Cadastro from '../screens/Cadastro/index';
 import QuestionOne from '../screens/Questions/QuestionOne';
 import Home from '../screens/Home/index';
 import { RankingCustoBeneficio } from '../screens/Ranking_Custo_Beneficio/index';
+
 import InfoRanking from '../screens/InfoRanking/index.js';
 import Product from '../screens/Product/index';
 
 //nutrientes
-import Proteina from '../screens/Nutrientes/Proteina/index';
+import Proteina from '../screens/Proteina/index';
+import Calcio from '../screens/Calcio/index';
+import Ferro from '../screens/Ferro/index';
+import Fibra from '../screens/Fibra/index';
+import VitaminaA from '../screens/VitaminaA/index';
+import VitaminaC from '../screens/VitaminaC/index';
+import VitaminaD from '../screens/VitaminaD/index';
+import VitaminaE from '../screens/VitaminaE/index';
+import Acucar from '../screens/Acucar/index';
+import Sodio from '../screens/Sodio/index';
 
 const Stack = createStackNavigator();   
 
@@ -45,6 +55,15 @@ const MainStack = () => {
 
             {/* Nutrientes */}
             <Stack.Screen name="Proteina" component={Proteina} />
+            <Stack.Screen name="Calcio" component={Calcio} />
+            <Stack.Screen name="Ferro" component={Ferro} />
+            <Stack.Screen name="Fibra" component={Fibra} />
+            <Stack.Screen name="VitaminaA" component={VitaminaA} />
+            <Stack.Screen name="VitaminaC" component={VitaminaC} />
+            <Stack.Screen name="VitaminaD" component={VitaminaD} />
+            <Stack.Screen name="VitaminaE" component={VitaminaE} />
+            <Stack.Screen name="Acucar" component={Acucar} />
+            <Stack.Screen name="Sodio" component={Sodio} />
         </Stack.Navigator>
     );
 }
