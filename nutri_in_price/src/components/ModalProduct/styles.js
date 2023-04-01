@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components/native";
 
-export const ProductItem = styled.TouchableOpacity`
+export const ProductItem = styled.Button`
     flex-direction: row;
     margin-left: 30px;
     margin-right: 30px;

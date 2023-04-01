@@ -64,6 +64,8 @@ export const Proteina = () => {
         });
     }
 
+    const [alimento, setAlimento] = useState('DeveloperPlus');
+
 
     let lugar_ranking = 0 ;
 
@@ -85,7 +87,7 @@ export const Proteina = () => {
 
                                 <AreaTitle>
                                     <TextHeather>Ranking de Proteínas</TextHeather>
-                                    <AreaBackButton onPress={productInfo}>
+                                    <AreaBackButton onPress={infoButton}>
                                         <Image
                                             source={info}
                                             style={styles.tinyLogo}
@@ -105,7 +107,14 @@ export const Proteina = () => {
 
                                         produto = {alimento.produto}
                                         preco_medio_nutriente = {alimento.preco_medio_nutriente}
+                                        // imagem = {alimento.imagem}
                                         
+                                        onPress={() => 
+                                            navigation.navigate('Product', {
+                                                paramKey: alimento
+                                            })
+                                        }
+
                                     />)}
 
                                     

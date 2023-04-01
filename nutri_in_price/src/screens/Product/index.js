@@ -22,19 +22,19 @@ import {
 import carne_moida from "../../assets/carne_moida.jpg";
 
 
-export const Product = () => {
+export const Product = ({route}) => {
 
     return(
         <Container>
             <Scroller>
-                <PageBody>
+                <PageBody key={route.params.paramKey}>
 
                     <ProductInfoArea>
 
                         <ProductImage source={carne_moida}></ProductImage>
 
                         <ProductInfo>
-                            <ProductInfoName>Carne Moida</ProductInfoName>
+                            <ProductInfoName>{route.params.paramKey.produto}</ProductInfoName>
                         </ProductInfo>
 
                     </ProductInfoArea>
@@ -42,11 +42,11 @@ export const Product = () => {
                     <InfoArea>
                         <ContainerPreco>
                             <InfoText>Preço:</InfoText>
-                            <ProductPrice>R$0.007</ProductPrice>
+                            <ProductPrice>R${route.params.paramKey.preco_medio_nutriente}</ProductPrice>
                         </ContainerPreco>
                         <InfoText2>
                             O preço apresentado equivale ao custo-benefício do nutriente 
-                            para cada 100g da carne moida.
+                            para cada 100g da {route.params.paramKey.produto}.
                         </InfoText2>
                     </InfoArea>
 

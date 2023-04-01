@@ -40,7 +40,7 @@ export const ModalProduct = (props) => {
    
 
     return(
-       <ProductItem onClick={infoProduct} key={props.codigo} >
+       <ProductItem  key={props.produto} >
             <RankingButton>
                 <RankingBtnText>{props.lugar_ranking}</RankingBtnText>
             </RankingButton>
