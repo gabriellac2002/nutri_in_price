@@ -1,6 +1,6 @@
 import React, { useState, useContext,useEffect } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { Image, ScrollView } from 'react-native';
+import { Image, ScrollView,Button, Text} from 'react-native';
 import {StyleSheet} from 'react-native';
 
 import {
@@ -69,6 +69,17 @@ export const Proteina = () => {
 
     let lugar_ranking = 0 ;
 
+    const createTwoButtonAlert = () =>
+    Alert.alert('Alert Title', 'My Alert Msg', [
+      {
+        text: 'Cancel',
+        onPress: () => console.log('Cancel Pressed'),
+        style: 'cancel',
+      },
+      {text: 'OK', onPress: () => console.log('OK Pressed')},
+    ]);
+
+
     return(
         <Container>
             <ScrollView>
@@ -110,13 +121,19 @@ export const Proteina = () => {
                                         // imagem = {alimento.imagem}
                                         
                                         onPress={() => 
-                                            navigation.navigate('Product', {
+                                            {
+                                                navigation.navigate('Product', {
                                                 paramKey: alimento
                                             })
+                                           
+                                        }
+                                            
+                                            
                                         }
 
                                     />)}
 
+                                    
                                     
                                     
                                 </RankingArea>

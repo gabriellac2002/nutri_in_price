@@ -74,3 +74,39 @@ export const InfoText2 = styled.Text`
     font-size: 14px;
     color: #000000;
 `;
+
+export const TabelaArea = styled.View`
+    display:flex;
+    flex-direction: column;
+    padding: 5%;
+`;
+
+export const AreaTitle = styled.View`
+    justify-content: center;
+    align-items: center;
+`;
+
+export const ListArea = styled.View`
+    
+`;
+
+export const ItemArea = styled.View`
+    margin-top: 5%;
+    display:flex;
+    flex-direction: column;
+`;
+
+export const TabelaHead = styled.View`
+    display:flex;
+    flex-direction: row;
+`;
+
+export const Coluna = styled.View`
+    margin-left: 15%;
+`;
+
+export const TextTabelaHead = styled.Text`
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+`;

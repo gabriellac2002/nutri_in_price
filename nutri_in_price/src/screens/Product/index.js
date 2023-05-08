@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext,useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {StyleSheet} from 'react-native';
 import { Image } from 'react-native';
@@ -16,13 +16,26 @@ import {
     InfoText,
     InfoText2,
     ProductPrice,
-    ContainerPreco
+    ContainerPreco,
+    TabelaArea,
+    AreaTitle,
+    ListArea,
+    ItemArea,
+    TabelaHead,
+    TextTabelaHead,
+    Coluna
 } from './styles';
 
-import carne_moida from "../../assets/carne_moida.jpg";
+import carne_moida from '../../assets/carne_moida.jpg';
 
 
 export const Product = ({route}) => {
+
+    const [nutrientes,setNutrientes] = useState([]);
+
+    useEffect(  () => {
+        fetch(`http://200.131.52.34:3000/alimento_nutriente/${route.params.paramKey.codigo}`).then((res) => res.json().then(data => setNutrientes(data)))
+    },[nutrientes]);
 
     return(
         <Container>
@@ -41,7 +54,7 @@ export const Product = ({route}) => {
 
                     <InfoArea>
                         <ContainerPreco>
-                            <InfoText>Preço:</InfoText>
+                            <InfoText>Custo-benefício:</InfoText>
                             <ProductPrice>R${route.params.paramKey.preco_medio_nutriente}</ProductPrice>
                         </ContainerPreco>
                         <InfoText2>
@@ -49,6 +62,39 @@ export const Product = ({route}) => {
                             para cada 100g da {route.params.paramKey.produto}.
                         </InfoText2>
                     </InfoArea>
+
+                    <TabelaArea>
+
+                        <AreaTitle>
+                            <ProductInfoName>Informações Nutricionais</ProductInfoName>
+                        </AreaTitle>
+
+                        <ListArea>
+                            <TabelaHead>
+                                <Coluna>
+                                    <TextTabelaHead>Nutrientes</TextTabelaHead>
+                                </Coluna>
+                                <Coluna>
+                                    <TextTabelaHead>Quantidade</TextTabelaHead>
+                                </Coluna> 
+                            </TabelaHead>
+                            {nutrientes.map((nutriente) => 
+                                <ItemArea key={nutriente.nutriente_id}>
+                                    <TabelaHead>
+                                        <Coluna>
+                                            <TextTabelaHead>
+                                                {nutriente.nome}
+                                            </TextTabelaHead>
+                                        </Coluna>
+                                        <Coluna>
+                                            <TextTabelaHead>{nutriente.quantidade}{nutriente.unidade}</TextTabelaHead>
+                                        </Coluna>
+                                    </TabelaHead>
+                                </ItemArea>
+                            )}
+                        </ListArea>
+
+                    </TabelaArea>
 
                 </PageBody>
             </Scroller>

@@ -16,7 +16,7 @@ import {
 
 import carne_moida from "../../assets/carne_moida.jpg";
 
-export const ModalProduct = (props) => {
+export const ModalProduct = ({onPress,...props}) => {
 
 
     const styled = StyleSheet.create({
@@ -36,18 +36,20 @@ export const ModalProduct = (props) => {
         });
     }
 
-    
+    props.image = 'https://reactnative.dev/img/tiny_logo.png';
    
 
     return(
-       <ProductItem  key={props.produto} >
+       <ProductItem  key={props.produto} onPress={onPress}>
             <RankingButton>
                 <RankingBtnText>{props.lugar_ranking}</RankingBtnText>
             </RankingButton>
 
            <Image
-                source={carne_moida}
                 style={styled.tinyLogo} 
+                source={{
+                    uri: `${props.image}`,
+                }}
             />
 
             <ProductInfo>
