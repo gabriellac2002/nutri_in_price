@@ -79,14 +79,21 @@ export const TabelaArea = styled.View`
     display:flex;
     flex-direction: column;
     padding: 5%;
+    margin-botton:10px;
+
 `;
 
 export const AreaTitle = styled.View`
     justify-content: center;
     align-items: center;
+    width:100%
+
 `;
 
 export const ListArea = styled.View`
+    display:flex;
+    align-items: center;
+    
     
 `;
 
@@ -94,15 +101,21 @@ export const ItemArea = styled.View`
     margin-top: 5%;
     display:flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `;
 
 export const TabelaHead = styled.View`
     display:flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
 `;
 
 export const Coluna = styled.View`
-    margin-left: 15%;
+    width:50%
+    
 `;
 
 export const TextTabelaHead = styled.Text`

@@ -72,10 +72,10 @@ export const Product = ({route}) => {
                         <ListArea>
                             <TabelaHead>
                                 <Coluna>
-                                    <TextTabelaHead>Nutrientes</TextTabelaHead>
+                                    <ProductInfoName>Nutrientes</ProductInfoName>
                                 </Coluna>
                                 <Coluna>
-                                    <TextTabelaHead>Quantidade</TextTabelaHead>
+                                    <ProductInfoName>Quantidade</ProductInfoName>
                                 </Coluna> 
                             </TabelaHead>
                             {nutrientes.map((nutriente) => 

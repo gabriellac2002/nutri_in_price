@@ -22,7 +22,7 @@ const DrawerNavigator = () => {
     
     <Drawer.Navigator useLegacyImplementation={true} initialRouteName="Home" drawerContent={props => <CustonDrawer {...props}></CustonDrawer>} screenOptions={{headerShown: false}}>
       <Drawer.Screen name="Home" component={MainStack} />
-      <Drawer.Screen name="Ranking" component={MainStack} />
+      <Drawer.Screen name="Ranking" component={Ranking} />
     </Drawer.Navigator>
     
   );

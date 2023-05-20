@@ -8,6 +8,7 @@ import Cadastro from '../screens/Cadastro/index';
 import QuestionOne from '../screens/Questions/QuestionOne';
 import Home from '../screens/Home/index';
 import { RankingCustoBeneficio } from '../screens/Ranking_Custo_Beneficio/index';
+import {RankingDensidadeNutricional } from '../screens/RankingDensidadeNutricional/index';
 
 import InfoRanking from '../screens/InfoRanking/index.js';
 import Product from '../screens/Product/index';
@@ -41,6 +42,7 @@ const MainStack = () => {
             <Stack.Screen name="Info" component={InfoRanking} />
 
             <Stack.Screen name="Ranking_custo_beneficio" component={RankingCustoBeneficio} />
+            <Stack.Screen name="RankingDensidadeNutricional" component={RankingDensidadeNutricional} />
             
             <Stack.Screen name="Product" component={Product} />
 
