@@ -6,6 +6,7 @@ import {
     CustomButton,
     CustomButtonText,
 } from './styles';
+import auth from '@react-native-firebase/auth';
 
 import SingInput from "../../components/SingInput";
 import Logo from '../../components/Logo/index';

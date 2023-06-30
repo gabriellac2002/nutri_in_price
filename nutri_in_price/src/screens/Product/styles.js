@@ -118,6 +118,12 @@ export const Coluna = styled.View`
     
 `;
 
+export const ColunaDois = styled.View`
+    display:flex;
+    align-items: flex-end;
+`;
+
+
 export const TextTabelaHead = styled.Text`
     font-size: 16px;
     font-weight: bold;

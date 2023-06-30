@@ -23,7 +23,8 @@ import {
     ItemArea,
     TabelaHead,
     TextTabelaHead,
-    Coluna
+    Coluna,
+    ColunaDois
 } from './styles';
 
 import carne_moida from '../../assets/carne_moida.jpg';
@@ -44,7 +45,7 @@ export const Product = ({route}) => {
 
                     <ProductInfoArea>
 
-                        <ProductImage source={carne_moida}></ProductImage>
+                        <ProductImage source={{uri: `${route.params.paramKey.imagem}`+'.png'}}></ProductImage>
 
                         <ProductInfo>
                             <ProductInfoName>{route.params.paramKey.produto}</ProductInfoName>
@@ -75,7 +76,9 @@ export const Product = ({route}) => {
                                     <ProductInfoName>Nutrientes</ProductInfoName>
                                 </Coluna>
                                 <Coluna>
-                                    <ProductInfoName>Quantidade</ProductInfoName>
+                                    <ColunaDois> 
+                                        <ProductInfoName>Quantidade</ProductInfoName>
+                                    </ColunaDois>
                                 </Coluna> 
                             </TabelaHead>
                             {nutrientes.map((nutriente) => 
@@ -87,7 +90,9 @@ export const Product = ({route}) => {
                                             </TextTabelaHead>
                                         </Coluna>
                                         <Coluna>
-                                            <TextTabelaHead>{nutriente.quantidade}{nutriente.unidade}</TextTabelaHead>
+                                            <ColunaDois>
+                                                <TextTabelaHead>{nutriente.quantidade} {nutriente.unidade}</TextTabelaHead>
+                                            </ColunaDois>
                                         </Coluna>
                                     </TabelaHead>
                                 </ItemArea>

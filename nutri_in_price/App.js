@@ -11,6 +11,9 @@ import MainStack from './src/stacks/MainStack';
 import DrawerNavigator from './src/stacks/DrawerNavigator'
 
 export default function App() {
+
+  
+
   return (
     <NavigationContainer>
       <DrawerNavigator/>  

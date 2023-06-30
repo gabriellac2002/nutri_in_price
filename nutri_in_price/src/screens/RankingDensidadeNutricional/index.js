@@ -21,7 +21,7 @@ import {
 import back from "../../assets/voltar.png";
 import info from "../../assets/info_asset.png";
 
-import ModalProduct from '../../components/ModalProduct/index';
+import ModalAlimento from '../../components/ModalAlimento/index';
 
 
 
@@ -32,7 +32,7 @@ export const RankingDensidadeNutricional = () => {
 
 
     useEffect(  () => {
-        fetch('http://200.131.52.34:3000/alimentos/1/33').then((res) => res.json().then(data => setAlimentos(data)))
+        fetch('http://200.131.52.34:3000/densidade_nutricional').then((res) => res.json().then(data => setAlimentos(data)))
     },[alimentos]);
 
     const styles = StyleSheet.create({
@@ -48,7 +48,7 @@ export const RankingDensidadeNutricional = () => {
 
     const backButtom = () => {
         navigation.reset({
-            routes: [{name: 'Ranking_custo_beneficio'}]
+            routes: [{name: 'Home'}]
         });
     }
 
@@ -110,14 +110,14 @@ export const RankingDensidadeNutricional = () => {
 
                                 <RankingArea>
                                     
-                                    {alimentos.map((alimento) => <ModalProduct 
+                                    {alimentos.map((alimento) => <ModalAlimento 
                                         key={alimento.codigo}
                                         value={alimento.codigo}
 
                                         lugar_ranking = {++lugar_ranking}
 
-                                        produto = {alimento.produto}
-                                        preco_medio_nutriente = {alimento.preco_medio_nutriente}
+                                        nome = {alimento.nome}
+                                        densidade = {alimento.densidade}
                                         // imagem = {alimento.imagem}
                                         
                                         onPress={() => 

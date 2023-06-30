@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import auth from '@react-native-firebase/auth';
 
 
 import { 
@@ -28,6 +29,18 @@ export const Login = () => {
     const [emailField, setEmailField] = useState('');
     const [passwordField, setPasswordField] = useState('');
 
+    function singUp(){
+        auth().createUserWithEmailAndPassword(emailField,passwordField).then();
+    }
+
+    function singIn(){
+        auth().signInWithEmailAndPassword(emailField,passwordField)
+        .then(() => {
+            logar();
+        })
+    }
+
+
     const handleMessageButtonClick = () => {
         navigation.reset({
             routes: [{name: 'Cadastro'}]
@@ -52,18 +65,18 @@ export const Login = () => {
                     IconSvg={EmailIcon}
                     placeholder="Digite seu e-mail"
                     value={emailField}
-                    onChangeText={t=>setEmailField(t)}
+                    onChangeText={setEmailField}
 
                 />
                 <SingInput
                     IconSvg={LockIcon}
                     placeholder="Digite sua senha"
                     value={passwordField}
-                    onChangeText={t=>setPasswordField(t)}
+                    onChangeText={setPasswordField}
 
                 />
 
-                <CustomButton onPress={logar}>
+                <CustomButton onPress={singIn}>
                     <CustomButtonText>LOGIN</CustomButtonText>
                 </CustomButton>
             </InputArea>

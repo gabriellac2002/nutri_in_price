@@ -1,5 +1,7 @@
-import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+
+import { useState, useEffect } from 'react';
+import auth from '@react-native-firebase/auth';
 
 //
 import Preload from '../screens/Preload';
@@ -28,6 +30,15 @@ import Sodio from '../screens/Sodio/index';
 const Stack = createStackNavigator();   
 
 const MainStack = () => {
+
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        auth().onAuthStateChanged((_user) =>{
+            setUser(_user);
+        });
+    }, []);
+
     return(
         <Stack.Navigator
             initialRouteName="Login"

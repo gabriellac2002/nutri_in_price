@@ -118,7 +118,7 @@ export const Proteina = () => {
 
                                         produto = {alimento.produto}
                                         preco_medio_nutriente = {alimento.preco_medio_nutriente}
-                                        // imagem = {alimento.imagem}
+                                        imagem = {alimento.imagem+'.png'}
                                         
                                         onPress={() => 
                                             {

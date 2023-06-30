@@ -14,9 +14,7 @@ import {
 } from './styles';
 
 
-import carne_moida from "../../assets/carne_moida.jpg";
-
-export const ModalProduct = ({onPress,...props}) => {
+export const ModalAlimento = ({onPress,...props}) => {
 
 
     const styled = StyleSheet.create({
@@ -48,16 +46,16 @@ export const ModalProduct = ({onPress,...props}) => {
            <Image
                 style={styled.tinyLogo} 
                 source={{
-                    uri: `${props.imagem}`,
+                    uri: `${props.imagem}`+'.png',
                 }}
             />
 
             <ProductInfo>
-                <ProductName>{props.produto}</ProductName>
-                <ProductPrice>R${props.preco_medio_nutriente}</ProductPrice>
+                <ProductName>{props.nome}</ProductName>
+                <ProductPrice>{props.densidade}</ProductPrice>
             </ProductInfo>
        </ProductItem>
     );
 }
 
-export default ModalProduct;
+export default ModalAlimento;
