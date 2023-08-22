@@ -21,7 +21,7 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => {
   return (
     
-    <Drawer.Navigator useLegacyImplementation={true} initialRouteName="Home" drawerContent={props => <CustonDrawer {...props}></CustonDrawer>} screenOptions={{headerShown: false}}>
+    <Drawer.Navigator useLegacyImplementation={false} initialRouteName="Home" drawerContent={props => <CustonDrawer {...props}></CustonDrawer>} screenOptions={{headerShown: false}}>
       <Drawer.Screen name="Home" component={MainStack} />
       <Drawer.Screen name="Ranking" component={Ranking} />
       <Drawer.Screen name="RankingDensidade" component={RankingDensidade} />
