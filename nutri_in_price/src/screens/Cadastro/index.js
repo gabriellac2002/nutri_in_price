@@ -71,7 +71,7 @@ export const Cadastro = ({navigation}) => {
 
             <InputArea>
                 <TextInput 
-                
+                style={style.input}
                 placeholder = "Insira seu e-mail"
                 type = "text"
                 onChangeText = {(text) => setEmail(text)}
@@ -79,7 +79,7 @@ export const Cadastro = ({navigation}) => {
                 />
 
                 <TextInput
-               
+                style={style.input}
                 secureTextEntry={true}
                 placeholder = "Insira sua senha"
                 type = "text"
@@ -97,3 +97,23 @@ export const Cadastro = ({navigation}) => {
 }
 
 export default Cadastro;
+
+import { StyleSheet } from "react-native";
+
+const style = StyleSheet.create(
+{
+
+    input:{
+        marginTop:10,
+        marginBottom:25,
+        padding:10,
+        height:50,
+        width:250,
+        borderBottomWidth:1,
+        borderBottomColor: "#fff",
+        marginLeft:10,
+        marginRight:20,
+        color:"#89c289"
+    }
+
+});
