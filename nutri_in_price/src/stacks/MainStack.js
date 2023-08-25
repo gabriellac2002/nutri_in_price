@@ -1,7 +1,7 @@
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { useState, useEffect } from 'react';
-import auth from '@react-native-firebase/auth';
+
 
 //
 import Preload from '../screens/Preload';
@@ -33,11 +33,7 @@ const MainStack = () => {
 
     const [user, setUser] = useState(null);
 
-    useEffect(() => {
-        auth().onAuthStateChanged((_user) =>{
-            setUser(_user);
-        });
-    }, []);
+    
 
     return(
         <Stack.Navigator

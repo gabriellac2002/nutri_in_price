@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { 
     Container,
@@ -6,7 +6,16 @@ import {
     CustomButton,
     CustomButtonText,
 } from './styles';
-import auth from '@react-native-firebase/auth';
+
+import {View,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    KeyboardAvoidingView
+   
+} from "react-native";
+
+import app from '../../config/firebase';
 
 import SingInput from "../../components/SingInput";
 import Logo from '../../components/Logo/index';
@@ -16,19 +25,44 @@ import LockIcon from "../../assets/lock.svg";
 import PersonIcon from "../../assets/person.svg"
 import LogoEmbrapa from '../../assets/Logomarca-Embrapa.svg'
 
-export const Cadastro = () => {
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
-    const navigation = useNavigation();
 
-    const [nameField, setNameField] = useState('');
-    const [emailField, setEmailField] = useState('');
-    const [passwordField, setPasswordField] = useState('');
+export const Cadastro = ({navigation}) => {
 
-    const handleButtonClick = () => {
-        navigation.reset({
-            routes: [{name: 'QuestionOne'}]
+    
+
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+    const [errorRegister, setErrorRegister] = useState("");
+
+    
+
+    const registerFirebase = ()=>{
+
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, email, senha)
+        .then((userCredential) => {
+         console.log('cadastrou')
+          const user = userCredential.user;
+          navigation.reset({
+            routes: [{name: 'Home'}]
+        });
+            //console.log(user);
+        })
+ 
+        .catch((error) => {
+            setErrorRegister(true)
+
+            let errorCode = error.code;
+            let errorMessage = error.message;
+         console.log(errorMessage);
         });
     }
+
+    useEffect(()=>{
+
+    }, []);
 
     return(
         <Container>
@@ -36,26 +70,24 @@ export const Cadastro = () => {
             <Logo/>
 
             <InputArea>
-                <SingInput
-                    IconSvg={PersonIcon}
-                    placeholder="Nome"
-                    value={nameField}
-                    onChangeText={t=>setNameField(t)}
-                />
-                <SingInput 
-                    IconSvg={EmailIcon}
-                    placeholder="Email"
-                    value={emailField}
-                    onChangeText={t=>setEmailField(t)}
-                />
-                <SingInput
-                    IconSvg={LockIcon}
-                    placeholder="Senha"
-                    value={passwordField}
-                    onChangeText={t=>setPasswordField(t)}
+                <TextInput 
+                
+                placeholder = "Insira seu e-mail"
+                type = "text"
+                onChangeText = {(text) => setEmail(text)}
+                value={email}
                 />
 
-                <CustomButton onPress={handleButtonClick}>
+                <TextInput
+               
+                secureTextEntry={true}
+                placeholder = "Insira sua senha"
+                type = "text"
+                onChangeText = {(text) => setSenha(text)}
+                value={senha}
+                />
+
+                <CustomButton onPress={registerFirebase}>
                     <CustomButtonText>Cadastrar</CustomButtonText>
                 </CustomButton>
             </InputArea>

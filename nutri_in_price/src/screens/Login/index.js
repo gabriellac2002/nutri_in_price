@@ -1,7 +1,14 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import auth from '@react-native-firebase/auth';
-
+import firebase from '../../config/firebase'
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import {View,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    KeyboardAvoidingView
+   
+} from "react-native";
 
 import { 
     Container,
@@ -22,24 +29,15 @@ import EmailIcon from "../../assets/email.svg";
 import LockIcon from "../../assets/lock.svg";
 import LogoEmbrapa from '../../assets/Logomarca-Embrapa.svg'
 
-export const Login = () => {
+export default function Login({ navigation }){
 
-    const navigation = useNavigation();
+    //const navigation = useNavigation();
 
-    const [emailField, setEmailField] = useState('');
-    const [passwordField, setPasswordField] = useState('');
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+    const [errorLogin, setErrorLogin] = useState("");
 
-    function singUp(){
-        auth().createUserWithEmailAndPassword(emailField,passwordField).then();
-    }
-
-    function singIn(){
-        auth().signInWithEmailAndPassword(emailField,passwordField)
-        .then(() => {
-            logar();
-        })
-    }
-
+    
 
     const handleMessageButtonClick = () => {
         navigation.reset({
@@ -47,11 +45,35 @@ export const Login = () => {
         });
     }
 
-    const logar = () => {
-        navigation.reset({
-            routes: [{name: 'Home'}]
+    const loginFirebase = ()=>{
+
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, senha)
+        .then((userCredential) => {
+            let user = userCredential.user;
+            console.log('logou')
+            //navigation.navigate('Home')
+            console.log(user)
+            navigation.reset({
+                routes: [{name: 'Home'}]
+            });
+   
+        })
+        
+        .catch((error) => {
+            setErrorLogin(true)
+            let errorCode = error.code;
+            let errorMessage = error.message;
+            console.log(email)
+            console.log(senha)
+            console.log(errorMessage)
+        
         });
     }
+
+    useEffect(()=>{
+
+    }, []);
 
 
 
@@ -61,22 +83,26 @@ export const Login = () => {
             <Logo/>
 
             <InputArea>
-                <SingInput 
-                    IconSvg={EmailIcon}
-                    placeholder="Digite seu e-mail"
-                    value={emailField}
-                    onChangeText={setEmailField}
-
-                />
-                <SingInput
-                    IconSvg={LockIcon}
-                    placeholder="Digite sua senha"
-                    value={passwordField}
-                    onChangeText={setPasswordField}
-
+                <TextInput 
+                
+                placeholder = "Insira seu e-mail"
+                type = "text"
+                onChangeText = {(text) => setEmail(text)}
+                value={email}
                 />
 
-                <CustomButton onPress={singIn}>
+                <TextInput
+                
+                secureTextEntry={true}
+                placeholder = "Insira sua senha"
+                type = "text"
+                onChangeText = {(text) => setSenha(text)}
+                value={senha}
+                />
+
+                
+
+                <CustomButton onPress={loginFirebase}>
                     <CustomButtonText>LOGIN</CustomButtonText>
                 </CustomButton>
             </InputArea>
@@ -90,4 +116,4 @@ export const Login = () => {
     );
 }
 
-export default Login;
+
